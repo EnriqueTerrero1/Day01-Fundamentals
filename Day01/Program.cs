@@ -4,12 +4,20 @@ string Name, Lastname;
 int ages , DeleteNumber,UpdateNumber;
 int OptionContinueQuestion;
 Console.WriteLine("Estas en el mantenimiento de Persona");
-CRUD crudPerson = new CRUD();
-Person person;
-Boolean ContinueOption = false;
+//AnimalService animal;
+//animal =new AnimalService();
+
+  
+//CRUD<Person> crud = new CRUD<Person>();
+
+//CRUD<Animal> animal = new CRUD<Animal>();
+//AnimalService animalService = new AnimalService();
+PersonService personService = new PersonService();
+//Person person;
+//Boolean ContinueOption = false;
 
 
-do
+/*do
 {
     Menu();
     Console.WriteLine("Desea continuar? (1 = Si / 2 = No)");
@@ -65,7 +73,7 @@ void Menu()
 
 }
 
-Menu();
+
 Person DataPerson()
 {
     person =new Person();
@@ -77,7 +85,6 @@ Person DataPerson()
     Lastname = Console.ReadLine();
     person.Lastname = Lastname;
     Console.WriteLine("Edad");
-    
     ages = int.Parse(Console.ReadLine());
     person.ages = ages;
 
@@ -87,10 +94,10 @@ Person DataPerson()
 void AddPerson()
 {
     var dataperson=DataPerson();
-    crudPerson.AddPerson(dataperson);
+    personService.AddPerson(dataperson);
     Console.WriteLine("persona agregada");
-    //Menu();
-    //ContinueQuestion();
+    
+    
 }
 
 
@@ -112,10 +119,10 @@ void AddPerson()
 
 }*/
 
-void Showpersons (){
+/*void Showpersons (){
     int index = 1;
-    crudPerson.GetallPersons().ForEach(person => Console.WriteLine($" {index++}  Nombre: {person.Name} Apellido: {person.Lastname} Edad: {person.ages}"));
-    //Menu();
+    personService.GetallPersons().ForEach(person => Console.WriteLine($" {index++}  Nombre: {person.Name} Apellido: {person.Lastname} Edad: {person.ages}"));
+   
 }
 
 void RemovePersons() {
@@ -123,8 +130,8 @@ void RemovePersons() {
     
     Console.WriteLine("Indique el numero del usuario a eliminar");
     DeleteNumber = int.Parse(Console.ReadLine());
-    crudPerson.RemovePerson(DeleteNumber);
-   //Menu();
+    personService.RemovePerson(DeleteNumber);
+   
 }
 
 void UpdatePersons()
@@ -135,10 +142,11 @@ void UpdatePersons()
     UpdateNumber = int.Parse(Console.ReadLine());
 
     var dataperson = DataPerson();
+
+
+    personService.UpdatePerson(dataperson,UpdateNumber);
     
 
-    crudPerson.UpdatePerson(dataperson,UpdateNumber);
-    //Menu();
-
 }
-//Menu(); poner menu al final para no tener que llamarlo en cada funcion
+//Menu(); poner menu al final para no tener que llamarlo en cada funcion*/
+

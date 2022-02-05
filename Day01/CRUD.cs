@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace Day01
 {
-    internal class CRUD
+    internal class CRUD <T>
     {
-        List<Person> persons = new List<Person>();
+        List<T> Entity = new List<T>();
 
 
-        public void AddPerson(Person person)
+        public void Add(T entity)
 
         {
-            persons.Add(person);
+            Entity.Add(entity);
 
         }
-        public List<Person> GetallPersons()
+        public List<T> Getall()
         {
-            return (persons);
+            return (Entity);
         }
 
-        public void RemovePerson(int index) {   
+        public void Remove(int index) {   
             
-            persons.RemoveAt(index-1); 
+            Entity.RemoveAt(index-1); 
         }
-        public void UpdatePerson(Person person,int index) {
+        public void Update(T entity,int index) {
 
-            persons[index - 1] = person; 
+            Entity[index - 1] = entity; 
 
            /* persons[i-1].Name = Name;
             persons[i-1].Lastname = LastName;
