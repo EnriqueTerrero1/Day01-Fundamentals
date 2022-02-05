@@ -10,7 +10,24 @@ namespace Day01
     {
         public AnimalService()
         {
-            Menu();
+            int OptionContinueQuestion;
+            Boolean ContinueOption = false;
+            do
+            {
+                Menu();
+                Console.WriteLine("Desea continuar? (1 = Si / 2 = No)");
+                OptionContinueQuestion = int.Parse(Console.ReadLine());
+                if (OptionContinueQuestion == 1)
+                {
+                    ContinueOption = true;
+                }
+                else
+                {
+                    ContinueOption = false;
+                }
+
+
+            } while (ContinueOption = true);
         }
        public string Name;
        public string AnimalType;
@@ -20,7 +37,7 @@ namespace Day01
 
 
         Animal animal;
-        AnimalService animalservice = new AnimalService();
+       
 
         void Menu()
         {
@@ -53,15 +70,13 @@ namespace Day01
 
             }
 
-
-
         }
 
         Animal DataAnimal()
         {
-             new Animal();
+           animal= new Animal();
 
-            
+
             Console.WriteLine("Escriba el nombre del animal?");
             Name = Console.ReadLine();
             animal.Name=Name;
@@ -80,14 +95,14 @@ namespace Day01
         void addAnimal()
         {
             var dataanimal= DataAnimal();
-            animalservice.Add(dataanimal);
+           Add(dataanimal);
             Console.WriteLine("Animal Agregado");
 
         }
         void removeAnimal() {
             Console.WriteLine("Indique el animal a eliminar");
             DeleteNumber = int.Parse( Console.ReadLine());
-            animalservice.Remove(DeleteNumber);
+            Remove(DeleteNumber);
             Console.WriteLine("Animal eliminado");
                 }
         void updateAnimal()
@@ -98,12 +113,12 @@ namespace Day01
             var dataAnimal = DataAnimal();
 
 
-            animalservice.Update(dataAnimal, UpdateNumber);
+            Update(dataAnimal, UpdateNumber);
         }
         void ShowAnimal()
         {
             int index = 1;
-            animalservice.Getall().ForEach(person => Console.WriteLine($" {index++}  Familia del animal: {animal.AnimalFamily} Peso: {animal.Weight} Nombre: {animal.Name} Tipo de animal: {animal.AnimalType}"));
+            Getall().ForEach(animal => Console.WriteLine($" {index++}  Familia del animal: {animal.AnimalFamily} Peso: {animal.Weight} Nombre: {animal.Name} Tipo de animal: {animal.AnimalType}"));
 
         }
 

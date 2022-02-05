@@ -11,8 +11,8 @@ Console.WriteLine("Estas en el mantenimiento de Persona");
 //CRUD<Person> crud = new CRUD<Person>();
 
 //CRUD<Animal> animal = new CRUD<Animal>();
-//AnimalService animalService = new AnimalService();
-PersonService personService = new PersonService();
+AnimalService animalService = new AnimalService();
+//PersonService personService = new PersonService();
 //Person person;
 //Boolean ContinueOption = false;
 

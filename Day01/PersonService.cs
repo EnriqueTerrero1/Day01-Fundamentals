@@ -11,6 +11,7 @@ namespace Day01
     {
       public PersonService()
         {
+            int OptionContinueQuestion;
             Boolean ContinueOption = false;
            do {
                 Menu();
@@ -31,7 +32,7 @@ namespace Day01
         }
         string Name, Lastname;
         int ages, DeleteNumber, UpdateNumber;
-        int OptionContinueQuestion;
+       
        
         Person person;
        
@@ -98,8 +99,6 @@ namespace Day01
             Console.WriteLine(dataperson.Name);
             Add(dataperson);
             Console.WriteLine("persona agregada");
-
-
         }
         void Showpersons()
         {

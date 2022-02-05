@@ -30,9 +30,7 @@ namespace Day01
 
             Entity[index - 1] = entity; 
 
-           /* persons[i-1].Name = Name;
-            persons[i-1].Lastname = LastName;
-            persons[i-1].ages = ages;*/
+         
         
         }
 
