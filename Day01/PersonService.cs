@@ -9,33 +9,23 @@ namespace Day01
     
     internal class PersonService: CRUD<Person>
     {
+        int DeleteNumber, UpdateNumber;
       public PersonService()
         {
-            int OptionContinueQuestion;
-            Boolean ContinueOption = false;
-           do {
+            do
+            {
                 Menu();
-                Console.WriteLine("Desea continuar? (1 = Si / 2 = No)");
-                OptionContinueQuestion = int.Parse(Console.ReadLine());
-                if (OptionContinueQuestion == 1)
-                {
-                    ContinueOption = true;
-                }
-                else
-                {
-                    ContinueOption = false;
-                }
+            }while( continueQuestion.Question());
 
 
-            } while (ContinueOption = true) ;
-
+             
         }
-        string Name, Lastname;
-        int ages, DeleteNumber, UpdateNumber;
-       
-       
-        Person person;
-       
+
+
+
+        
+        ContinueQuestion continueQuestion = new ContinueQuestion(); 
+        dataPerson dataPerson = new dataPerson();
 
         void Menu()
         {
@@ -74,29 +64,12 @@ namespace Day01
 
 
         }
-        Person DataPerson()
-        {
-            Console.WriteLine("Estas en el mantenimiento de Persona");
-            person = new Person();
-            Console.WriteLine("Agregar person");
-            Console.WriteLine("Name");
-            Name = Console.ReadLine();
-            person.Name = Name;
-            Console.WriteLine("Apellido");
-            Lastname = Console.ReadLine();
-            person.Lastname = Lastname;
-            Console.WriteLine("Edad");
-            ages = int.Parse(Console.ReadLine());
-            person.ages = ages;
-
-            return person;
-
-        }
+      
         void AddPerson()
         {
             
-            var dataperson = DataPerson();
-            Console.WriteLine(dataperson.Name);
+            var dataperson = dataPerson.CapturePersonData();
+           
             Add(dataperson);
             Console.WriteLine("persona agregada");
         }
@@ -119,14 +92,9 @@ namespace Day01
 
         void UpdatePersons()
         {
-
-
             Console.WriteLine("Indique el numero del usuario a actualizar");
             UpdateNumber = int.Parse(Console.ReadLine());
-
-            var dataperson = DataPerson();
-
-
+            var dataperson = dataPerson.CapturePersonData();
             Update(dataperson, UpdateNumber);
 
 

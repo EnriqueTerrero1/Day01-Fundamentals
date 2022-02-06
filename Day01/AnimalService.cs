@@ -11,32 +11,19 @@ namespace Day01
         public AnimalService()
         {
             int OptionContinueQuestion;
-            Boolean ContinueOption = false;
+            
             do
             {
                 Menu();
-                Console.WriteLine("Desea continuar? (1 = Si / 2 = No)");
-                OptionContinueQuestion = int.Parse(Console.ReadLine());
-                if (OptionContinueQuestion == 1)
-                {
-                    ContinueOption = true;
-                }
-                else
-                {
-                    ContinueOption = false;
-                }
-
-
-            } while (ContinueOption = true);
+            } while (continueQuestion.Question());
         }
-       public string Name;
-       public string AnimalType;
-       public  float Weight;
-       public  string AnimalFamily;
+        ContinueQuestion continueQuestion = new ContinueQuestion();
+        
        public int DeleteNumber, UpdateNumber;
 
 
         Animal animal;
+        dataAnimal DataAnimal = new dataAnimal();
        
 
         void Menu()
@@ -72,29 +59,10 @@ namespace Day01
 
         }
 
-        Animal DataAnimal()
-        {
-           animal= new Animal();
-
-
-            Console.WriteLine("Escriba el nombre del animal?");
-            Name = Console.ReadLine();
-            animal.Name=Name;
-            Console.WriteLine("Escriba el tipo de animal?");
-            AnimalType = Console.ReadLine();
-            animal.AnimalType = AnimalType;
-            Console.WriteLine("Escriba el peso del animal");
-            Weight = float.Parse( Console.ReadLine());
-            animal.Weight=Weight;
-            Console.WriteLine("Escriba la familia del animal");
-            AnimalFamily= Console.ReadLine();
-            animal.AnimalFamily=AnimalFamily;
-
-            return animal;
-        }
+      
         void addAnimal()
         {
-            var dataanimal= DataAnimal();
+            var dataanimal= DataAnimal.CaptureAnimalData();
            Add(dataanimal);
             Console.WriteLine("Animal Agregado");
 
@@ -109,10 +77,7 @@ namespace Day01
         {
             Console.WriteLine("Indique el numero del animal a actualizar");
             UpdateNumber = int.Parse(Console.ReadLine());
-
-            var dataAnimal = DataAnimal();
-
-
+            var dataAnimal = DataAnimal.CaptureAnimalData();
             Update(dataAnimal, UpdateNumber);
         }
         void ShowAnimal()

@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Day01
 {
-    internal class Person
+    internal  class Person
     {
-      /*  public Person(string Name, string Lastname, int ages)
-        {
-
-        }*/
+     
         public string? Name { get; set; }
         public int ages { get; set; }
         public string? Lastname { get; set; }
-          /*  private
-            protected */
+         
     }
 }
